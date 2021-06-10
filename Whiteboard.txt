@@ -1,0 +1,102 @@
+Short Lab Instructions:
+https://1drv.ms/t/s!AitfmUcWnxXYqWSAjIc4PqdlWqPx?e=Rhdfjp
+
+Attendance Sheet:
+https://docs.google.com/spreadsheets/d/184TCBkZVwWkZ3JwKyYglU2WPDyCquKT1HWNTBWIxrRE/edit#gid=1790501312
+
+Meeting URL:
+https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZjJiNjAyZWMtYjljMy00MDYxLTk2MzItMGVhNjllNjBjNjA2%40thread.v2/0?context=%7b%22Tid%22%3a%22cf782ba3-926e-4a04-9e7e-aa2f6e18f34d%22%2c%22Oid%22%3a%22565afb47-71a1-4048-b998-d4f3c370f788%22%7d
+
+Lab details
+Link: https://trainocate.learnondemand.net   
+User Name: atin.gupta@trainocate.com
+Password: Trn@12345
+
+GitHub Labs:
+
+Lab 03: Retrieving Azure Storage resources and metadata by using the Azure Storage SDK for .NET
+Create a Storage account
+mediastor[yourname]
+Open Resource
+In the Properties section, record the value of the Primary Blob Service Endpoint text box.
+Copy the Access keys
+
+Exercise 2: Upload a blob into a container:
+Create container -  raster-graphics
+Create container -  compressed-audio
+Open raster-graphics container
+Upload file - F:\Allfiles\Labs\03\Starter\Images\graph.jpg
+
+Exercise 3: Access containers by using the .NET SDK
+Open VSC
+Open Folder  F:\Allfiles\Labs\03\Solution\BlobManager
+Open Terminal
+dotnet build
+dotnet run
+
+Task 3: Upload a new blob by using the portal
+Open vector-graphics container
+Upload Allfiles F:\Allfiles\Labs\03\Starter\Images\graph.svg
+
+
+Lab 04: Constructing a polyglot data solution
+
+Task 2: Create an Azure SQL Database server resource
+Resource Group PolyglotData
+Server Name - polysqlsrvr[Your Name]
+In the Server admin login text box, enter testuser
+In the Password text box, enter TestPa55w.rd
+Networking: In the Allow Azure services and resources to access this server section, select Yes
+
+Task 3: Create an Azure Cosmos DB account resource
+Resource Group PolyglotData
+AccountName - polycosmos[yourname]
+Core (SQL)
+Multi-region Writes - Disable
+Copy Keys from Cosmos DB Account
+
+Task 4: Create an Azure Storage account resource
+Storage account name - polystor[yourname]
+
+Exercise 2: Import and validate data
+Task 1: Upload image blobs
+Open storage account - polystor[yourname]
+Create container - images
+Public access level - Blob (anonymous read access for blobs only)
+Copy value from Container\Setting\Properties\URL and store in notepad
+Upload file to container - F:\Allfiles\Labs\04\Starter\Images\individual.jpg
+
+Task 2: Upload an SQL .bacpac file
+Create container - databases
+Upload - F:\Allfiles\Labs\04\Starter\AdventureWorks.bacpac
+
+Task 3: Import an SQL database
+Open SQL Server - polysqlsrvr[yourname]
+From the SQL server blade, select Import database.
+	In the Database name text box, enter AdventureWorks.
+	Leave the Collation text box set to its default value.
+	In the Server admin login text box, enter testuser.
+	In the Password text box, enter TestPa55w.rd
+
+Task 4: Use an imported SQL database
+Opem polysqlsrvr[yourname] SQL server
+Security\Firewalls and virtual networks\Select Add client IP
+Open AdventureWorks  SQL Database
+Copy value from Settings\Connection strings\ADO.NET (SQL Authentication)
+Update the connection string that you recorded and specify username and password
+Open Query editor pane
+Queries:
+SELECT * FROM AdventureWorks.dbo.Models
+SELECT * FROM AdventureWorks.dbo.Products
+
+Exercise 3: Open and configure a .NET web application
+Open VSC - F:\Allfiles\Labs\04\Solution\AdventureWorks
+Open the appsettings.json file
+Update the value of the AdventureWorksSqlContext property by setting its value to the ADO.NET (SQL Authentication) connection string
+
+Update the blob base URL - Settings.BlobContainerUrl
+
+Set its value to the URL property of the Azure Storage blob container named images
+
+
+dotnet run
