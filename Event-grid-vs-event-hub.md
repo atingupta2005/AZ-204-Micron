@@ -1,6 +1,8 @@
 ## What is the difference between Azure Event Hub and Event Grid?
 The noticeable difference between them is that Event Hubs are accepting only endpoints for the ingestion of data and they don’t provide a mechanism for sending data back to publishers. On the other hand, Event Grid sends HTTP requests to notify events that happen in publishers.
 
+Event Grid is an eventing backplane that enables event-driven, reactive programming. It uses a publish-subscribe model. Publishers emit events, but have no expectation about which events are handled. Subscribers decide which events they want to handle.
+
 ## When to Use
 ### Event Hubs
  - This service can be used when your application deals with the series of events and when you think your application might need a massive scale at least in the future, say a million events and to handle the data that also comes along with the event.
